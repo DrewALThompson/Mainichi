@@ -3,8 +3,8 @@ class CreateUserwords < ActiveRecord::Migration[6.0]
     create_table :userwords do |t|
       t.string :jpname
       t.string :definition
-      t.string :sentence
-      t.string :category
+      t.string :jpsentence
+      t.string :engsentence
       t.belongs_to :user
 
       t.timestamps
