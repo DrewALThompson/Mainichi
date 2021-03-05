@@ -8,3 +8,5 @@ export default class LoggerContainer extends Component {
 
     }
 }
+
+// state will be used for this one
