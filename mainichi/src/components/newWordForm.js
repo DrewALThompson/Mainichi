@@ -26,13 +26,14 @@ export default class NewWordForm extends Component {
 
     render(){
         return (
-            <div className='form'>
+            <div className='form' id='NewWord'>
+                <h3>Add a New Word</h3>
                 <form onSubmit={this.handleSubmit}>
-                    <input type='text' name='jpname' value={this.state.jpname} onChange={e => this.handleOnChange(e)} />
-                    <input type='text' name='definition' value={this.state.definition} onChange={e => this.handleOnChange(e)} />
-                    <input type='text' name='jpsentence' value={this.state.jpsentence} onChange={e => this.handleOnChange(e)} />
-                    <input type='text' name='engsentence' value={this.state.engsentence} onChange={e => this.handleOnChange(e)} />
-                    <input type='text' name='romkat' value={this.state.romkat} onChange={e => this.handleOnChange(e)} />
+                    <input type='text' name='jpname' label='漢字' value={this.state.jpname} onChange={e => this.handleOnChange(e)} />
+                    <input type='text' name='definition' label='意味' value={this.state.definition} onChange={e => this.handleOnChange(e)} />
+                    <input type='text' name='jpsentence' label='文' value={this.state.jpsentence} onChange={e => this.handleOnChange(e)} />
+                    <input type='text' name='engsentence' label='Eng' value={this.state.engsentence} onChange={e => this.handleOnChange(e)} />
+                    <input type='text' name='romkat' label='ローマ／カタ' value={this.state.romkat} onChange={e => this.handleOnChange(e)} />
                     <input type='submit' />
                 </form>
             </div>
