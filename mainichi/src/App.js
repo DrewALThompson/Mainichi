@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import LoggerContainer from './containers/loggerContainer'
 
 export default class App extends Component {
   render() {
@@ -13,7 +14,7 @@ export default class App extends Component {
 
     return (
      <div>
-       Here is my test words
+       < LoggerContainer />
      </div>
     )
   }
