@@ -1,7 +1,6 @@
 import React, { Component, Suspense } from 'react';
-import Word from './components/words.js'
 
-export default class WordsContainer extends Component {
+export default class Words extends Component {
     constructor(props){       
         super(props)
     }
@@ -9,7 +8,7 @@ export default class WordsContainer extends Component {
     render(){
         return(
             <div>
-                < Word />
+                
             </div>
         )
     }
