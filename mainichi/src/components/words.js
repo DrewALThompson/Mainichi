@@ -1,14 +1,15 @@
-import React, { Component, Suspense } from 'react';
+import React, { Component} from 'react';
 
 export default class Words extends Component {
-    constructor(props){       
-        super(props)
-    }
 
     render(){
+
+        const word = this.props.word
+
         return(
             <div>
-                
+                <h2>{word.jpname}</h2>
+                <p>{word.jpsentence}</p>
             </div>
         )
     }

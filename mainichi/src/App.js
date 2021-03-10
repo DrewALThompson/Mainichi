@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LoggerContainer from './containers/loggerContainer'
+import WordsContainer from './containers/wordsContainer';
 
 export default class App extends Component {
   render() {
@@ -14,7 +15,7 @@ export default class App extends Component {
 
     return (
      <div>
-       < LoggerContainer />
+       < WordsContainer />
      </div>
     )
   }

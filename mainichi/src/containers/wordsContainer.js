@@ -1,6 +1,6 @@
-import React, { Component, Suspense } from 'react';
-import Word from './components/words.js'
-import Words from './components/words.js'
+import React, { Component } from 'react';
+import Word from '../components/word.js'
+import Words from '../components/words.js'
 
 export default class WordsContainer extends Component {
     constructor(props){       
@@ -23,7 +23,7 @@ export default class WordsContainer extends Component {
 
     render(){
 
-        let words = this.state.words.map((word, idx) => {
+        const loadedWords = this.state.words.map((word, idx) => {
             if (idx === 0){
                 return < Word word={word} key={idx} />
             } else {
@@ -32,7 +32,9 @@ export default class WordsContainer extends Component {
         })
 
         return(
-            {words}
+            <>
+                { loadedWords }
+            </>
         )
     }
 }
