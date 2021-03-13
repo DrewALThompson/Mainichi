@@ -13,6 +13,7 @@ import WordsContainer from './containers/wordsContainer';
 import UserContainer from './containers/userContainer';
 import NavBar from './components/navBar';
 import NotFound from './components/notFound'
+import styled from 'styled-components'
 
 const App = (props) => {
   return (

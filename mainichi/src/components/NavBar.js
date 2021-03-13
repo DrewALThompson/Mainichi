@@ -1,13 +1,34 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const Bubble = styled.div`
+    border: 2px solid #8B8F94;
+    position: absolute;
+    left: auto;
+    top: auto;
+`
+
+const NavButton = styled.button`
+
+`
+
+
 
 const NavBar = () => {
+
     return (
-        <div className='nav-bubble'>
-            <ul>
-                <li><Link to ='/'>Home</Link></li>
-                <li><Link to ='/user'>My Page</Link></li>
-            </ul>
-        </div>
+        <Bubble>
+                <Link to ='/'>
+                    <NavButton type='button'>
+                        Home
+                    </NavButton>
+                </Link>
+                <Link to ='/user'>
+                    <NavButton type='button'>
+                        My Page
+                    </NavButton>
+                </Link>
+        </Bubble>
     )
 }
 

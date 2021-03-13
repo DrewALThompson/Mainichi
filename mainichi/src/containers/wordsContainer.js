@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Word from '../components/word.js'
 import Words from '../components/words.js'
+import WordSelector from '../components/wordSelector'
 
 export default class WordsContainer extends Component {
     constructor(props){       
@@ -15,35 +16,20 @@ export default class WordsContainer extends Component {
         }
     }
 
-    componentDidMount(){}
-
-    handleOnClick(){}
+    handleOnClick = (e) => {
+        e.preventDefault();
+    }
 
     
 
     render(){
 
-        // const loadedWords = this.state.words.map((word, idx) => {
-        //     if (idx === 0){
-        //         return < Word word={word} key={idx} />
-        //     } else {
-        //         return < Words word={word} key={idx} />
-        //     }
-        // })
-
         return(
-            <>
+            <div className='word-container'>
+                <WordSelector/>
                 <Word />
                 <Words />
-            </>
+            </div>
         )
     }
 }
-
-// props will be used for this one
-// Need a router here will also route to user words
-// [
-    // {jpname: "太陽" , definition: 'sun', jpsentence: '太陽が熱いです', engsentence: 'the sun is hot', category: 'noun'},
-    // {jpname: "記憶" , definition: 'memory', jpsentence: '記憶が経ている', engsentence: 'memory is going bad', category: 'noun'},
-    // {jpname: "ながる" , definition: 'to punch', jpsentence: '壁をながした', engsentence: 'he punched the wall', category: 'verb'}
-// ]

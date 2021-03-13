@@ -6,10 +6,9 @@ import NewWordForm from '../components/newWordForm';
 export default class LoggerContainer extends Component {
     render(){
         return(
-            <div>
+            <div className='login-box'>
                 <LoginForm />
                 <SignupForm />
-                <NewWordForm />
             </div>
         )
     }
