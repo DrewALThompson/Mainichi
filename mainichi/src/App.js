@@ -3,11 +3,16 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useParams,
+  useRouteMatch
 } from 'react-router-dom'
 import { connect } from 'react-redux';
-import LoggerContainer from './containers/loggerContainer'
+import LoggerContainer from './containers/loggerContainer';
 import WordsContainer from './containers/wordsContainer';
+import UserContainer from './containers/userContainer';
+import NavBar from './components/navBar';
+import NotFound from './components/notFound'
 
 const App = (props) => {
   return (

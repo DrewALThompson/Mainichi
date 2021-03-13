@@ -23,17 +23,18 @@ export default class WordsContainer extends Component {
 
     render(){
 
-        const loadedWords = this.state.words.map((word, idx) => {
-            if (idx === 0){
-                return < Word word={word} key={idx} />
-            } else {
-                return < Words word={word} key={idx} />
-            }
-        })
+        // const loadedWords = this.state.words.map((word, idx) => {
+        //     if (idx === 0){
+        //         return < Word word={word} key={idx} />
+        //     } else {
+        //         return < Words word={word} key={idx} />
+        //     }
+        // })
 
         return(
             <>
-                { loadedWords }
+                <Word />
+                <Words />
             </>
         )
     }
