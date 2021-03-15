@@ -67,11 +67,11 @@ export default class WordSelector extends Component {
                 <HeaderEn>Please choose a category!</HeaderEn>
                 <HeaderJp>カテゴリーを選んでください！</HeaderJp>
                 <WordBorder>
-                    <Word1Button name='n1' type='button'>N1</Word1Button>
-                    <Word2Button name='n2' type='button'>N2</Word2Button>
-                    <Word3Button name='n3' type='button'>N3</Word3Button>
-                    <WordAllButton name='all' type='button'>All</WordAllButton>
-                    <WordMyButton type='button'>My Words</WordMyButton>
+                    <Word1Button name='n1' type='button' onClick={this.props.onClick}>N1</Word1Button>
+                    <Word2Button name='n2' type='button' onClick={this.props.onClick}>N2</Word2Button>
+                    <Word3Button name='n3' type='button' onClick={this.props.onClick}>N3</Word3Button>
+                    <WordAllButton name='all' type='button' onClick={this.props.onClick}>All</WordAllButton>
+                    <WordMyButton type='button' onClick={this.props.onClick}>My Words</WordMyButton>
                 </WordBorder>
             </div>
             
