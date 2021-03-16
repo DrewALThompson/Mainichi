@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
-import WordRouter from '../components/wordRouter'
+import WordRouter from '../components/wordRouter';
+import UserRouter from '../components/userRouter';
 import styled from 'styled-components'
 
 const Border = styled.div`
-    border: #8E8A83 1px solid;
     position: absolute;
-    top: 40%;
-    left: 20%;
-    background-color: #E2D7EC;
 `
+
+const BorderA = styled(Border)`
+    top: 40%;
+    left: 35%;
+`
+
+const BorderB = styled(Border)`
+    top: 40%;
+    left: 55%;
+`
+
+
+
 const Header = styled.p`
     display: flex;
     justify-content: center;
@@ -20,9 +30,22 @@ const HeaderEn = styled(Header)``
 const HeaderJp = styled(Header)``
 
 export default class RouteContainer extends Component {
+    constructor(props){
+        super(props)
+    }
+
+    handleClick = (e) => {
+        e.target.children.style.display = 'display';
+    }
+
     render(){
         return(
-            <div></div>
+            <>
+                <HeaderEn>Please Choose an option!</HeaderEn>
+                <HeaderJp>選択してください！</HeaderJp>
+                <BorderA>< WordRouter onClick={this.handleClick}/></BorderA>
+                <BorderB>< UserRouter onClick={this.handleClick}/></BorderB>
+            </>
         )
     }
 }

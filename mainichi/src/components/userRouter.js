@@ -14,20 +14,17 @@ const Button = styled.button`
     &:hover {background-color: #85606A};
 `
 
-
-
-
-const WordRouter = () => {
+const UserRouter = (props) => {
 
     return (
         <>
-            <Link to='/words'>
+            <Link to='/user'>
                 <Button  type='button'>
-                    Let's Study!
+                    Take me to my page!
                 </Button>
             </Link>
         </>
     )
 }
 
-export default WordRouter
+export default UserRouter
