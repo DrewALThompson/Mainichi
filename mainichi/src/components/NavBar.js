@@ -16,9 +16,9 @@ const NavBar = () => {
 
     return (
         <Bubble>
-                <Link to ='/'>
+                <Link to='/words'>
                     <NavButton type='button'>
-                        Home
+                        Study
                     </NavButton>
                 </Link>
                 <Link to ='/user'>

@@ -19,10 +19,11 @@ export default class WordsContainer extends Component {
             wordIDX: 0,
             words: [
                 {jpname: "太陽" , definition: 'sun', jpsentence: '太陽が熱いです', engsentence: 'the sun is hot', category: 'n1'},
-                {jpname: "記憶" , definition: 'memory', jpsentence: '記憶が経ている', engsentence: 'memory is going bad', category: 'n3'},
-                {jpname: "ながる" , definition: 'to punch', jpsentence: '壁をながした', engsentence: 'he punched the wall', category: 'n3'}
-            ],
-            loadedWords: null
+                {jpname: "記憶" , definition: 'memory', jpsentence: '記憶が経ている', engsentence: 'memory is going bad', category: 'n2'},
+                {jpname: "ながる" , definition: 'to punch', jpsentence: '壁をながした', engsentence: 'he punched the wall', category: 'n2'},
+                {jpname: "案外" , definition: 'surprisingly', jpsentence: '案外バカになっている', engsentence: 'surprisingly he is becoming stupid', category: 'n3'},
+                {jpname: "成り立つ" , definition: 'to consist of', jpsentence: '命はいろいろのことを成り立ちます', engsentence: 'life consists of various things', category: 'n3'}
+            ]
         }
     }
 
@@ -36,7 +37,9 @@ export default class WordsContainer extends Component {
     //     }
     // }
 
-    
+    // filterWords = () => {
+    //     this.state.words.filter((word) => word.category ===)
+    // }
 
     render(){
         return(

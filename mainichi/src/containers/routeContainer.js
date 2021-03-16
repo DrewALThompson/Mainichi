@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import StudyRouter from '../components/wordRouter';
+import StudyRouter from '../components/studyRouter';
 import UserRouter from '../components/userRouter';
 import styled from 'styled-components'
 
