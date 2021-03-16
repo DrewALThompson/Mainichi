@@ -78,3 +78,10 @@ export default class WordSelector extends Component {
         )
     }
 }
+
+// handleOnClick = (e) => {
+//         e.preventDefault();
+//         let load = this.state.words.filter((word) => word.category === e.target.name);
+//         this.setState({loadedWords: load})
+//         console.log(this.state.loadedWords)
+//     }

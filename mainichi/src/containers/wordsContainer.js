@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Word from '../components/word.js'
 import Words from '../components/words.js'
-import WordSelector from '../components/wordSelector'
 
 export default class WordsContainer extends Component {
     constructor(props){       
@@ -27,33 +26,12 @@ export default class WordsContainer extends Component {
     //     }
     // }
 
-    handleOnClick = (e) => {
-        e.preventDefault();
-        let load = this.state.words.filter((word) => word.category === e.target.name);
-        this.setState({loadedWords: load})
-        console.log(this.state.loadedWords)
-    }
-
-    handleNextClick = e => {
-        e.preventDefault();
-
-    }
-
     
 
     render(){
-
-        let wordsLoaded;
-        if (this.state.loadedWords !== null){
-            wordsLoaded = true;
-        } else {
-            wordsLoaded = false;
-        }
-        console.log(this.state.loadedWords)
-        // <Words words={this.state.loadedWords} />
         return(
             <div>
-                { wordsLoaded ? <Word words={this.state.loadedWords} /> : <WordSelector onClick={this.handleOnClick}/>}
+               
             </div>
         )
     }

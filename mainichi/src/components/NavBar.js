@@ -12,8 +12,6 @@ const NavButton = styled.button`
 
 `
 
-
-
 const NavBar = () => {
 
     return (
