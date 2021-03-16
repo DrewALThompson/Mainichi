@@ -9,10 +9,10 @@ import {
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 import LoggerContainer from './containers/loggerContainer';
-import WordsContainer from './containers/wordsContainer'
+import WordsContainer from './containers/wordsContainer';
+import RouteContainer from './containers/routeContainer';
 import UserContainer from './containers/userContainer';
 import NavBar from './components/navBar';
-import WordRouter from './components/wordRouter'
 import NotFound from './components/notFound';
 
 
@@ -21,11 +21,10 @@ const App = (props) => {
   return (
     <Router>
       <NavBar />
-      < WordRouter />
       
       <Switch>
         <Route exact path='/'>
-          <></>
+          <RouteContainer />
         </Route>
         <Route path='/user'>
           <UserContainer />
