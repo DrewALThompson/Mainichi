@@ -34,17 +34,13 @@ export default class RouteContainer extends Component {
         super(props)
     }
 
-    handleClick = (e) => {
-        e.target.children.style.display = 'display';
-    }
-
     render(){
         return(
             <>
                 <HeaderEn>Please Choose an option!</HeaderEn>
                 <HeaderJp>選択してください！</HeaderJp>
-                <BorderA>< StudyRouter onClick={this.handleClick}/></BorderA>
-                <BorderB>< UserRouter onClick={this.handleClick}/></BorderB>
+                <BorderA>< StudyRouter /></BorderA>
+                <BorderB>< UserRouter /></BorderB>
             </>
         )
     }
