@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import WordRouter from '../components/wordRouter';
+import StudyRouter from '../components/wordRouter';
 import UserRouter from '../components/userRouter';
 import styled from 'styled-components'
 
@@ -43,7 +43,7 @@ export default class RouteContainer extends Component {
             <>
                 <HeaderEn>Please Choose an option!</HeaderEn>
                 <HeaderJp>選択してください！</HeaderJp>
-                <BorderA>< WordRouter onClick={this.handleClick}/></BorderA>
+                <BorderA>< StudyRouter onClick={this.handleClick}/></BorderA>
                 <BorderB>< UserRouter onClick={this.handleClick}/></BorderB>
             </>
         )

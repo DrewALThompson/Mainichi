@@ -17,7 +17,7 @@ const Button = styled.button`
 
 
 
-const WordRouter = () => {
+const StudyRouter = () => {
 
     return (
         <>
@@ -30,4 +30,4 @@ const WordRouter = () => {
     )
 }
 
-export default WordRouter
+export default StudyRouter

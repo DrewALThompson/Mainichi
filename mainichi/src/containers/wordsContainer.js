@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 import Word from '../components/word.js'
 import Words from '../components/words.js'
+import styled from 'styled-components';
+import {
+    Route,
+    Link,
+    useParams,
+    useRouteMatch
+  } from "react-router-dom";
+
+const Container = styled.div`
+`
 
 export default class WordsContainer extends Component {
     constructor(props){       
@@ -30,9 +40,9 @@ export default class WordsContainer extends Component {
 
     render(){
         return(
-            <div>
-               
-            </div>
+            <Container>
+                
+            </Container>
         )
     }
 }
