@@ -6,13 +6,15 @@ import {
   Link,
   useParams,
   useRouteMatch
-} from 'react-router-dom'
+} from 'react-router-dom';
 import { connect } from 'react-redux';
 import LoggerContainer from './containers/loggerContainer';
-import WordsContainer from './containers/wordsContainer';
+import RouteContainer from './containers/routeContainer';
+import WordsContainer from './containers/wordsContainer'
 import UserContainer from './containers/userContainer';
 import NavBar from './components/navBar';
-import NotFound from './components/notFound'
+import NotFound from './components/notFound';
+
 
 const App = (props) => {
 
@@ -22,10 +24,13 @@ const App = (props) => {
       
       <Switch>
         <Route exact path='/'>
-          <WordsContainer />
+          <RouteContainer />
         </Route>
         <Route path='/user'>
           <UserContainer />
+        </Route>
+        <Route path='/words'>
+          <WordsContainer />
         </Route>
         <Route path='*'>
           <NotFound />

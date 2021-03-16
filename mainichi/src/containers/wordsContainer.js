@@ -38,3 +38,9 @@ export default class WordsContainer extends Component {
 }
 
 // 'http://localhost:3000'
+// handleOnClick = (e) => {
+//         e.preventDefault();
+//         let load = this.state.words.filter((word) => word.category === e.target.name);
+//         this.setState({loadedWords: load})
+//         console.log(this.state.loadedWords)
+//     }
