@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
-import Word from '../components/word.js'
-import Words from '../components/words.js'
 import styled from 'styled-components';
-import {
-    Route,
-    Link,
-    useParams,
-    useRouteMatch
-  } from "react-router-dom";
+import WordRoutes from '../components/wordRoutes';
 
 const Container = styled.div`
+    
 `
 
 export default class WordsContainer extends Component {
@@ -43,9 +37,9 @@ export default class WordsContainer extends Component {
 
     render(){
         return(
-            <Container>
-                
-            </Container>
+            <>
+                <WordRoutes />
+            </>
         )
     }
 }

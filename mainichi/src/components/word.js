@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
-export default class Word extends Component {
+export default function Word() {
 
-    render(){
+    let {wordId} = useParams();
 
-        let word = this.props.words[0];
-
-        return(
-            <div className='word-card'>
-                {word.jpname}{word.definition}{word.jpsentence}{word.engsentence}
-            </div>
-        )
-    }
+    return(
+        <div>
+            <h3>{wordId}</h3>
+        </div>
+    )
 }
