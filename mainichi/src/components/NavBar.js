@@ -6,26 +6,25 @@ const Bubble = styled.div`
     position: absolute;
     left: auto;
     top: auto;
+    cursor: pointer;
 `
 
-const NavButton = styled.button`
+const NavLink = styled(Link)`
+    cursor: pointer;
 
 `
+
 
 const NavBar = () => {
 
     return (
         <Bubble>
-                <Link to='/words'>
-                    <NavButton type='button'>
+                <NavLink to='/words'>
                         Study
-                    </NavButton>
-                </Link>
-                <Link to ='/user'>
-                    <NavButton type='button'>
+                </NavLink>
+                <NavLink to ='/user'>
                         My Page
-                    </NavButton>
-                </Link>
+                </NavLink>
         </Bubble>
     )
 }

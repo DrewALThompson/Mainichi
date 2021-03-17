@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import StudyRouter from '../components/studyRouter';
-import UserRouter from '../components/userRouter';
+import RouterButton from '../components/routerButton';
 import styled from 'styled-components'
 
 const Border = styled.div`
@@ -16,7 +15,6 @@ const BorderB = styled(Border)`
     top: 40%;
     left: 55%;
 `
-
 
 
 const Header = styled.p`
@@ -39,8 +37,8 @@ export default class RouteContainer extends Component {
             <>
                 <HeaderEn>Please Choose an option!</HeaderEn>
                 <HeaderJp>選択してください！</HeaderJp>
-                <BorderA>< StudyRouter /></BorderA>
-                <BorderB>< UserRouter /></BorderB>
+                <BorderA>< RouterButton route={'/words'}>Let's Study</RouterButton></BorderA>
+                <BorderB>< RouterButton route={'/user'}>Take me to my page!</RouterButton></BorderB>
             </>
         )
     }
