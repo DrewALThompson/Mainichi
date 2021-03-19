@@ -6,6 +6,12 @@ import CardBack from '../components/cardBack';
 // let {wordId} = useParams();
 // import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
+const CardStock = styled.div`
+    position: absolute;
+    top: 100px;
+    left: 500px;
+`
+
 export default class WordCard extends Component {
     constructor(props){
         super(props)
@@ -17,9 +23,9 @@ export default class WordCard extends Component {
 
     render(){
         return(
-            <div>
-
-            </div>
+            <CardStock>
+                {this.state.flipped === true ? <CardFront /> : <CardBack />}
+            </CardStock>
         )
     }
 }
