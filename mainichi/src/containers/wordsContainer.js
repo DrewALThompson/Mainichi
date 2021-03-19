@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import WordRoutes from '../components/wordRoutes';
 
-const Container = styled.div`
-    
-`
-
 export default class WordsContainer extends Component {
     constructor(props){       
         super(props)
@@ -31,14 +27,11 @@ export default class WordsContainer extends Component {
     //     }
     // }
 
-    // filterWords = () => {
-    //     this.state.words.filter((word) => word.category ===)
-    // }
 
     render(){
         return(
             <>
-                <WordRoutes />
+                <WordRoutes words={this.state.words} />
             </>
         )
     }

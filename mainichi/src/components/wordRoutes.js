@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 
 const Container = styled.div`
-    display: none;
+    display: flex;
 `
 
 const Header = styled.p`
@@ -22,7 +22,7 @@ const HeaderEn = styled(Header)``
 
 const HeaderJp = styled(Header)``
 
-export default function WordRoutes() {
+export default function WordRoutes(props) {
 
     let { path, url} = useRouteMatch();
 
@@ -39,7 +39,7 @@ export default function WordRoutes() {
                     <HeaderJp>カテゴリーを選んでください！</HeaderJp>
                 </Route>
                 <Route path={`${path}/:wordId`}>
-                    <Word />
+                    <Word words={props.words}/>
                 </Route>
             </Switch>
         </Container>
