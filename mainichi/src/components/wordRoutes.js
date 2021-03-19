@@ -1,7 +1,7 @@
 import React from 'react';
-import RouterButton from '../components/routerButton';
+import RouterButton from './routerButton';
 import styled from 'styled-components';
-import Word from './word'
+import WordCard from '../containers/wordCard'
 import {
     Route,
     Switch,
@@ -39,7 +39,7 @@ export default function WordRoutes(props) {
                     <HeaderJp>カテゴリーを選んでください！</HeaderJp>
                 </Route>
                 <Route path={`${path}/:wordId`}>
-                    <Word words={props.words}/>
+                    <WordCard words={props.words}/>
                 </Route>
             </Switch>
         </Container>
