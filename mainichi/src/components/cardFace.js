@@ -1,17 +1,15 @@
 import React from 'react';
 import CardButtons from './cardButtons'
 
-export default function CardBack(props) {
-
-    let word = props.word;
+export default function CardFront(props) {
 
     return(
         <div>
-            <h1>{word.definition}</h1>
-            <h3>{word.engsentence}</h3>
+            <h1>{props.title}</h1>
+            <h3>{props.sentence}</h3>
+            <CardButtons onClick={props.last}>Last</CardButtons>
             <CardButtons onClick={props.flip}>Flip</CardButtons>
             <CardButtons onClick={props.next}>Next</CardButtons>
-            <CardButtons onClick={props.last}>Last</CardButtons>
         </div>
     )
 }

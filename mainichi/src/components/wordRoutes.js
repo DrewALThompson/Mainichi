@@ -40,7 +40,6 @@ export default function WordRoutes(props) {
                     <HeaderJp>カテゴリーを選んでください！</HeaderJp>
                 </Route>
                     <Route path={`${path}/:wordId`} render={(props) => <WordCard {...props} words={cardWords}/>} />
-                    {/* <Route path={`${path}/:wordId`}><WordCard word={props.words} /></Route> */}
             </Switch>
         </Container>
     )

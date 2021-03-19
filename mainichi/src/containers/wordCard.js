@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import CardFront from '../components/cardFront';
-import CardBack from '../components/cardBack';
+import CardFace from '../components/cardFace';
 
 // let {wordId} = useParams();
 // import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
@@ -16,15 +15,15 @@ export default class WordCard extends Component {
     constructor(props){
         super(props)
         this.state = {
-            category: null,
             flipped: false,
             wordIndex: 0,
-            loadedWords: this.props.words
+            loadedWords: this.props.words,
+            filteredWords: []
         }
     }
 
-    componentDidMount(){
-        // let filteredWords = this.state.loadedWords.filter(() => ())
+    filterWords(){
+        this.props.words.filter((word) => word.category === this.props.match.params.wordId)
     }
 
     flipCard = (e) => {
@@ -61,13 +60,25 @@ export default class WordCard extends Component {
 
 
     render(){
-        // let word = this.state.loadedWords[this.state.wordIndex];
-        console.log(this.props)
+        // let filterWords;
+        // if (this.props.match.params.wordId !== 'all'){
+        //     filterWords = this.props.words.filter((word) => word.category === this.props.match.params.wordId);
+        //     this.setState((state) => {
+        //         return {...state, filteredWords: filterWords}
+        //     })
+        // } else {
+        //     this.setState((state) => {
+        //         return {...state, filteredWords: this.state.loadedWords}
+        //     })
+        // }
+        // console.log(this.state.filteredWords)
+        let word = this.state.loadedWords[this.state.wordIndex];
+        
         return(
             <CardStock>
-                {/* {this.state.flipped === true ?
-                 <CardFront flip={this.flipCard} next={this.nextCard} last={this.lastCard} word={word} /> : 
-                 <CardBack flip={this.flipCard} next={this.nextCard} last={this.lastCard} word={word} />} */}
+                {this.state.flipped === true ?
+                 <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={word.jpname} sentence={word.jpsentence} /> : 
+                 <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={word.definition} sentence={word.engsentence} />}
             </CardStock>
         )
     }
