@@ -6,7 +6,6 @@ export default class WordsContainer extends Component {
     constructor(props){       
         super(props)
         this.state = {
-            wordIDX: 0,
             words: [
                 {jpname: "太陽" , definition: 'sun', jpsentence: '太陽が熱いです', engsentence: 'the sun is hot', category: 'n1'},
                 {jpname: "記憶" , definition: 'memory', jpsentence: '記憶が経ている', engsentence: 'memory is going bad', category: 'n2'},
