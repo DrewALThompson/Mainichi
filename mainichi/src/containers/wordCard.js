@@ -16,15 +16,58 @@ export default class WordCard extends Component {
     constructor(props){
         super(props)
         this.state = {
-            flipped: false
+            category: null,
+            flipped: false,
+            wordIndex: 0,
+            loadedWords: this.props.words
+        }
+    }
+
+    componentDidMount(){
+        // let filteredWords = this.state.loadedWords.filter(() => ())
+    }
+
+    flipCard = (e) => {
+        e.preventDefault();
+        this.setState({flipped: !this.state.flipped})
+    }
+
+    nextCard = (e) => {
+        e.preventDefault();
+        if (this.state.wordIndex === this.state.loadedWords.length -1){
+            this.setState((state) => {
+                return {...state, wordIndex: 0}
+            })
+        } else {
+            this.setState((state) => {
+                return {...state, wordIndex:state.wordIndex + 1}
+            })
+        }
+        
+    }
+
+    lastCard = (e) => {
+        e.preventDefault();
+        if (this.state.wordIndex === 0){
+            this.setState((state) => {
+                return {...state, wordIndex: this.state.loadedWords.length - 1}
+            })
+        } else {
+            this.setState((state) => {
+                return {...state, wordIndex:state.wordIndex - 1}
+            })
         }
     }
 
 
     render(){
+        // let word = this.state.loadedWords[this.state.wordIndex];
+        console.log(this.props)
         return(
             <CardStock>
-                {this.state.flipped === true ? <CardFront /> : <CardBack />}
+                {/* {this.state.flipped === true ?
+                 <CardFront flip={this.flipCard} next={this.nextCard} last={this.lastCard} word={word} /> : 
+                 <CardBack flip={this.flipCard} next={this.nextCard} last={this.lastCard} word={word} />} */}
             </CardStock>
         )
     }

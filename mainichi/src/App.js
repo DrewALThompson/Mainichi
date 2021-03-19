@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link,
-  useParams,
-  useRouteMatch
+  Route
 } from 'react-router-dom';
-import { connect } from 'react-redux';
-import LoggerContainer from './containers/loggerContainer';
+// import { connect } from 'react-redux';
+// import LoggerContainer from './containers/loggerContainer';
 import WordsContainer from './containers/wordsContainer';
 import RouteContainer from './containers/routeContainer';
 import UserContainer from './containers/userContainer';
@@ -16,7 +13,7 @@ import NavBar from './components/navBar';
 import NotFound from './components/notFound';
 
 
-const App = (props) => {
+const App = () => {
 
   return (
     <Router>

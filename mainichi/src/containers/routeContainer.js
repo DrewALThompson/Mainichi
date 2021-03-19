@@ -28,9 +28,6 @@ const HeaderEn = styled(Header)``
 const HeaderJp = styled(Header)``
 
 export default class RouteContainer extends Component {
-    constructor(props){
-        super(props)
-    }
 
     render(){
         return(

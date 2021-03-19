@@ -24,6 +24,7 @@ const HeaderJp = styled(Header)``
 
 export default function WordRoutes(props) {
 
+    let cardWords = props.words;
     let { path, url} = useRouteMatch();
 
     return(
@@ -38,9 +39,8 @@ export default function WordRoutes(props) {
                     <HeaderEn>Please Choose A category</HeaderEn>
                     <HeaderJp>カテゴリーを選んでください！</HeaderJp>
                 </Route>
-                <Route path={`${path}/:wordId`}>
-                    <WordCard words={props.words}/>
-                </Route>
+                    <Route path={`${path}/:wordId`} render={(props) => <WordCard {...props} words={cardWords}/>} />
+                    {/* <Route path={`${path}/:wordId`}><WordCard word={props.words} /></Route> */}
             </Switch>
         </Container>
     )
