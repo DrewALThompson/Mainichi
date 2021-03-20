@@ -17,13 +17,20 @@ export default class WordCard extends Component {
         this.state = {
             flipped: false,
             wordIndex: 0,
-            loadedWords: this.props.words,
-            filteredWords: []
+            loadedWords: []
         }
     }
 
-    filterWords(){
-        this.props.words.filter((word) => word.category === this.props.match.params.wordId)
+    // filterWords(){
+    //     this.props.loadedWords.filter((word) => word.category === this.props.match.params.wordId)
+    // }
+
+    static getDerivedStateFromProps(props, state){
+        if (props.match.params.wordId !== 'all'){
+            return {...state, loadedWords: props.words.filter((word) => word.category === props.match.params.wordId)}
+        } else {
+            return {...state, loadedWords: props.words}
+        } 
     }
 
     flipCard = (e) => {
@@ -60,23 +67,12 @@ export default class WordCard extends Component {
 
 
     render(){
-        // let filterWords;
-        // if (this.props.match.params.wordId !== 'all'){
-        //     filterWords = this.props.words.filter((word) => word.category === this.props.match.params.wordId);
-        //     this.setState((state) => {
-        //         return {...state, filteredWords: filterWords}
-        //     })
-        // } else {
-        //     this.setState((state) => {
-        //         return {...state, filteredWords: this.state.loadedWords}
-        //     })
-        // }
-        // console.log(this.state.filteredWords)
+
         let word = this.state.loadedWords[this.state.wordIndex];
-        
+
         return(
             <CardStock>
-                {this.state.flipped === true ?
+                {this.state.flipped === false ?
                  <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={word.jpname} sentence={word.jpsentence} /> : 
                  <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={word.definition} sentence={word.engsentence} />}
             </CardStock>

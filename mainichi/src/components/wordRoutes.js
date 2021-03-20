@@ -26,20 +26,20 @@ export default function WordRoutes(props) {
 
     let cardWords = props.words;
     let { path, url} = useRouteMatch();
-
+    
     return(
         <Container>
-            <RouterButton route={`${url}/n1`}>N1</RouterButton>
-            <RouterButton route={`${url}/n2`}>N2</RouterButton>
-            <RouterButton route={`${url}/n3`}>N3</RouterButton>
-            <RouterButton route={`${url}/all`}>All</RouterButton>
+            <RouterButton route={`${url}/n1`} key='n1'>N1</RouterButton>
+            <RouterButton route={`${url}/n2`} key='n2'>N2</RouterButton>
+            <RouterButton route={`${url}/n3`} key='n3'>N3</RouterButton>
+            <RouterButton route={`${url}/all`} key='all'>All</RouterButton>
             <RouterButton route={`/users/words`}>My Words</RouterButton>
             <Switch>
                 <Route exact path={path}>
                     <HeaderEn>Please Choose A category</HeaderEn>
                     <HeaderJp>カテゴリーを選んでください！</HeaderJp>
                 </Route>
-                    <Route path={`${path}/:wordId`} render={(props) => <WordCard {...props} words={cardWords}/>} />
+                <Route path={`${path}/:wordId`} render={(props) => <WordCard {...props} words={cardWords}/>} />
             </Switch>
         </Container>
     )
