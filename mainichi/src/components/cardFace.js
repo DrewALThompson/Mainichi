@@ -1,15 +1,32 @@
 import React from 'react';
 import CardButtons from './cardButtons'
+import styled from 'styled-components';
+
+const ButtonContainer = styled.div`
+    position: absolute;
+    top: 185px;
+    left: 135px;
+`
+
+const TitleContainer = styled.h1`
+    text-align: center;
+`
+
+const SentContainer = styled.h3`
+    text-align: center;
+`
 
 export default function CardFront(props) {
 
     return(
         <div>
-            <h1>{props.title}</h1>
-            <h3>{props.sentence}</h3>
-            <CardButtons onClick={props.last}>Last</CardButtons>
-            <CardButtons onClick={props.flip}>Flip</CardButtons>
-            <CardButtons onClick={props.next}>Next</CardButtons>
+            <TitleContainer>{props.title}</TitleContainer>
+            <SentContainer>{props.sentence}</SentContainer>
+            <ButtonContainer>
+                <CardButtons onClick={props.last}>Last</CardButtons>
+                <CardButtons onClick={props.flip}>Flip</CardButtons>
+                <CardButtons onClick={props.next}>Next</CardButtons>
+            </ButtonContainer>
         </div>
     )
 }

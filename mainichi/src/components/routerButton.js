@@ -8,7 +8,7 @@ const Button = styled(Link)`
     padding: 30px;
     position: relative;
     height: 125px;
-    max-width: 125px;
+    width: 120px;
     font-size: 18px;
     border-radius: 10px;
     &:hover {background-color: #85606A};

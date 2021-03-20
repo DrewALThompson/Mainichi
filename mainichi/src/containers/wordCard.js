@@ -6,9 +6,15 @@ import CardFace from '../components/cardFace';
 // import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 const CardStock = styled.div`
+    display: flex;
+    justify-content: center;
     position: absolute;
-    top: 100px;
-    left: 500px;
+    top: 200px;
+    left: 400px;
+    border: white solid 2px;
+    width: 400px;
+    height 224px;
+
 `
 
 export default class WordCard extends Component {
