@@ -5,7 +5,7 @@ export default function wordsReducer (state = { user: {}, words: []}, action){
         case 'FETCH_WORDS':
             return {...state, words: action.payload}
         case 'ADD_WORD':
-            return state
+            return {...state, emails: action.payload }
         default:
             return state
     }
