@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2021_03_01_022602) do
 
   create_table "userwords", force: :cascade do |t|
     t.string "jpname"
-    t.string "romkat"
     t.string "definition"
     t.string "jpsentence"
     t.string "engsentence"
@@ -33,15 +32,12 @@ ActiveRecord::Schema.define(version: 2021_03_01_022602) do
 
   create_table "words", force: :cascade do |t|
     t.string "jpname"
-    t.string "romkat"
     t.string "definition"
     t.string "jpsentence"
     t.string "engsentence"
     t.string "category"
-    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_words_on_user_id"
   end
 
 end

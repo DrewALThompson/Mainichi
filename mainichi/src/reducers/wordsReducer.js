@@ -1,11 +1,13 @@
-export default function wordsReducer (state = { user: {}, words: []}, action){
+export default function wordsReducer (state = { user: {}, words: ['monkey', 'monkey'], index: 0}, action){
     switch (action.type){
-        case 'FETCH_USERWORDS':
+        case 'SET_USERWORDS':
             return {...state, userwords: action.payload}
-        case 'FETCH_WORDS':
+        case 'SET_WORDS':
             return {...state, words: action.payload}
         case 'ADD_WORD':
-            return {...state, emails: action.payload }
+            return {...state, words: action.payload }
+        case 'SET_INDEX':
+            return {...state, index: action.payload}
         default:
             return state
     }

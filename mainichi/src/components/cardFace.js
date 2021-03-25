@@ -16,7 +16,7 @@ const SentContainer = styled.h3`
     text-align: center;
 `
 
-export default function CardFront(props) {
+export default function CardFace(props) {
 
     return(
         <div>
