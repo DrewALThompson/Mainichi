@@ -60,19 +60,19 @@ class WordCard extends Component {
 
     render(){
         let i = Math.min(this.props.words.length - 1, this.props.index);
-        let word = this.props.words[i];
+        let word = this.props.words[i] || {jpname: 'monkey', jpsentence: 'monkey', definition: 'monke', engsentence: 'monke'};
         
         return(
-            // <CardStock>
-            //     {this.state.flipped === false ?
-            //      <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={word.jpname} sentence={word.jpsentence} /> : 
-            //      <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={word.definition} sentence={word.engsentence} />}
-            // </CardStock>
             <CardStock>
                 {this.state.flipped === false ?
-                 <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={'monkey'} sentence={'monkey'} /> : 
-                 <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={'monkey'} sentence={'monkey'} />}
+                 <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={word.jpname} sentence={word.jpsentence} /> : 
+                 <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={word.definition} sentence={word.engsentence} />}
             </CardStock>
+            // <CardStock>
+            //     {this.state.flipped === false ?
+            //      <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={'monkey'} sentence={'monkey'} /> : 
+            //      <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={'monkey'} sentence={'monkey'} />}
+            // </CardStock>
         )
     }
 }
