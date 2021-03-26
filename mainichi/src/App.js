@@ -26,7 +26,7 @@ const App = () => {
         <Route path='/user'>
           <UserContainer />
         </Route>
-        <Route path='/words'>
+        <Route path='/study'>
           <WordsContainer />
         </Route>
         <Route path='*'>

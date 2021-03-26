@@ -34,7 +34,7 @@ export default class RouteContainer extends Component {
             <>
                 <HeaderEn>Please Choose an option!</HeaderEn>
                 <HeaderJp>選択してください！</HeaderJp>
-                <BorderA>< RouterButton route={'/words'}>Let's Study</RouterButton></BorderA>
+                <BorderA>< RouterButton route={'/study'}>Let's Study</RouterButton></BorderA>
                 <BorderB>< RouterButton route={'/user'}>Take me to my page!</RouterButton></BorderB>
             </>
         )

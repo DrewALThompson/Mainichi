@@ -19,7 +19,7 @@ const NavBar = () => {
 
     return (
         <Bubble>
-                <NavLink to='/words'>
+                <NavLink to='/study'>
                         Study
                 </NavLink>
                 <NavLink to ='/user'>
