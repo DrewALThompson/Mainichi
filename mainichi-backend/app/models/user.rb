@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-    has_many :words
     has_many :userwords
 
     has_secure_password

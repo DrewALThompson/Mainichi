@@ -31,11 +31,11 @@ DATA = {
     ],
 
     :userword_keys =>
-      ["jpname", "definition", "jpsentence", "engsentence", 'user'],
+      ["jpname", "definition", "jpsentence", "engsentence", 'user_id'],
     :userwords => [
-        ['転音', 'Elision', 'コロラドの英語で「Mountain」というは、始まるの「ｎ」が転音です', 'In Mountain in Coloradan English, the first n is an elision.', 0],
-        ['癇癪', 'Temper', '彼は癇癪がない', 'He does not have a temper', 0],
-        ['激怒', 'To lose temper', 'ずっと激怒します', 'He is always loosing his temper', 0]
+        ['転音', 'Elision', 'コロラドの英語で「Mountain」というは、始まるの「ｎ」が転音です', 'In Mountain in Coloradan English, the first n is an elision.', 1],
+        ['癇癪', 'Temper', '彼は癇癪がない', 'He does not have a temper', 1],
+        ['激怒', 'To lose temper', 'ずっと激怒します', 'He is always loosing his temper', 1]
     ]
 }
 
@@ -57,11 +57,11 @@ end
 
 def make_words
     DATA[:words].each do |word|
-        new_words = Word.new
-        words.each_with_index do |attribute, i|
-        new_words.send(DATA[:words_keys][i]+"=", attribute)
+        new_word = Word.new
+        word.each_with_index do |attribute, i|
+        new_word.send(DATA[:word_keys][i]+"=", attribute)
         end
-        new_words.save
+        new_word.save
     end
 end
 

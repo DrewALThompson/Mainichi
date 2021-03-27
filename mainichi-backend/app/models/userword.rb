@@ -1,4 +1,5 @@
 class Userword < ApplicationRecord
+        belongs_to :user
 
     validates :jpname, presence: true,
             length: {minimum: 2, maximum: 64},
@@ -16,9 +17,5 @@ class Userword < ApplicationRecord
     validates :engsentence, presence: true,
             length: {minimum: 2, maximum: 128},
             format: { with: /\A[ーa-zA-Z]/ }
-
-    validates :romkat, presence: true,
-            length: {minimum: 2, maximum: 64},
-            format: { with: /\A[一-龯ぁ-ゔゞァ-・ヽヾ゛゜]/ }
 
 end
