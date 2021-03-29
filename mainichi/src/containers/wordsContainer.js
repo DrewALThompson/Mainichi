@@ -7,9 +7,7 @@ import {fetchWords}  from '../actions/fetchWords'
 class WordsContainer extends Component {
     
     componentWillMount(){
-        // if (this.props.words.length === 0){
-        //     this.props.fetchWords();
-        // }
+        this.props.fetchWords()
         console.log('ok')
     }
 

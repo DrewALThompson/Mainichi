@@ -68,11 +68,6 @@ class WordCard extends Component {
                  <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={word.jpname} sentence={word.jpsentence} /> : 
                  <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={word.definition} sentence={word.engsentence} />}
             </CardStock>
-            // <CardStock>
-            //     {this.state.flipped === false ?
-            //      <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={'monkey'} sentence={'monkey'} /> : 
-            //      <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={'monkey'} sentence={'monkey'} />}
-            // </CardStock>
         )
     }
 }
