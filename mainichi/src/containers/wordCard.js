@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import CardFace from '../components/cardFace';
 import { connect } from 'react-redux';
 import { setIndex } from '../actions/setIndex';
+import Counter from '../components/counter'
 
 const CardStock = styled.div`
     display: flex;
@@ -21,7 +22,6 @@ class WordCard extends Component {
         super(props)
         this.state = {
             flipped: false,
-            wordIndex: 0,
             loadedWords: []
         }
     }
@@ -41,7 +41,7 @@ class WordCard extends Component {
 
     nextCard = (e) => {
         e.preventDefault();
-        if (this.props.index === this.props.words.length){
+        if (this.props.index === this.state.loadedWords.length - 1){
             this.props.setIndex(0)
         } else {
             this.props.setIndex(this.props.index + 1)
@@ -59,14 +59,15 @@ class WordCard extends Component {
 
 
     render(){
-        let i = Math.min(this.props.words.length - 1, this.props.index);
-        let word = this.props.words[i] || {jpname: 'monkey', jpsentence: 'monkey', definition: 'monke', engsentence: 'monke'};
+        let i = Math.min(this.state.loadedWords.length - 1, this.props.index);
+        let word = this.state.loadedWords[i] || {jpname: 'monkey', jpsentence: 'monkey', definition: 'monke', engsentence: 'monke'};
         
         return(
             <CardStock>
                 {this.state.flipped === false ?
                  <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={word.jpname} sentence={word.jpsentence} /> : 
                  <CardFace flip={this.flipCard} next={this.nextCard} last={this.lastCard} title={word.definition} sentence={word.engsentence} />}
+                 <Counter wordIndex={this.props.index} wordsLength={this.state.loadedWords.length} />
             </CardStock>
         )
     }
