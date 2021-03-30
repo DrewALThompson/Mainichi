@@ -26,8 +26,8 @@ export default class LoginForm extends Component {
             <div className='form' id='Login'>
                 <h3>Login Form</h3>
                 <form onSubmit={this.handleSubmit}>
-                    <input type='text' name='username' label='Username' value={this.state.username} onChange={e => this.handleOnChange(e)} />
-                    <input type='text' name='password' label='Password' value={this.state.password} onChange={e => this.handleOnChange(e)} />
+                    <label>Username:</label><br /><input type='text' name='username' label='Username' value={this.state.username} onChange={e => this.handleOnChange(e)} /><br />
+                    <label>Password: </label><br /><input type='text' name='password' label='Password' value={this.state.password} onChange={e => this.handleOnChange(e)} /><br />
                     <input type='submit' />
                 </form>
             </div>
