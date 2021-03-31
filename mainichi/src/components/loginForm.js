@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import {fetchUser} from '../actions/fetchUser'
+import { connect } from 'react-redux';
 
-export default class LoginForm extends Component {
+class LoginForm extends Component {
 
     constructor() {
         super()
         this.state = {
-          username: '',
+          name: '',
           password: ''
         }
     }
@@ -26,7 +28,7 @@ export default class LoginForm extends Component {
             <div className='form' id='Login'>
                 <h3>Login Form</h3>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Username:</label><br /><input type='text' name='username' label='Username' value={this.state.username} onChange={e => this.handleOnChange(e)} /><br />
+                    <label>Username:</label><br /><input type='text' name='name' label='Username' value={this.state.name} onChange={e => this.handleOnChange(e)} /><br />
                     <label>Password: </label><br /><input type='text' name='password' label='Password' value={this.state.password} onChange={e => this.handleOnChange(e)} /><br />
                     <input type='submit' />
                 </form>
@@ -34,3 +36,5 @@ export default class LoginForm extends Component {
         )
     }
 }
+
+export default connect(null,{fetchUser})(LoginForm)
