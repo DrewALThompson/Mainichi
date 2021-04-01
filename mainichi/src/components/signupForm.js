@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {fetchNewUser} from '../actions/fetchNewUser'
 
-export default class SignupForm extends Component {
+class SignupForm extends Component {
 
     constructor() {
         super()
@@ -18,7 +18,8 @@ export default class SignupForm extends Component {
         this.props.fetchNewUser(this.state)
         this.setState({
             name: '',
-            pasword: ''
+            password: '',
+            password_confirmation: ''
         })
     }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+import {addWord} from '../actions/addWord'
 
 const FormBox = styled.div`
     position: absolute;

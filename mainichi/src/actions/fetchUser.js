@@ -1,4 +1,4 @@
-export function fetchNewUser(json){
+export function fetchUser(json){
     return (dispatch) => { 
         fetch('http://localhost:3000/sessions', {
             headers:{
@@ -6,7 +6,7 @@ export function fetchNewUser(json){
                 'Accept': 'application/json',
             },
             method: 'POST',
-            body: JSON.stringify(data)
+            body: JSON.stringify(json)
         })
         .then(res => res.json())
         .then(user => dispatch({

@@ -6,7 +6,7 @@ export function fetchNewUser(json){
                 'Accept': 'application/json',
             },
             method: 'POST',
-            body: JSON.stringify(data)
+            body: JSON.stringify(json)
         })
         .then(res => res.json())
         .then(user => dispatch({
