@@ -10,7 +10,7 @@ export function fetchUser(json){
         })
         .then(res => res.json())
         .then(user => dispatch({
-            type: 'FETCH_USER',
+            type: 'SET_USER',
             payload: user
         }))
     }

@@ -34,7 +34,7 @@ class LoginForm extends Component {
                 <h3>Login Form</h3>
                 <form onSubmit={this.handleSubmit}>
                     <label>Username:</label><br /><input type='text' name='name' label='Username' value={this.state.name} onChange={e => this.handleOnChange(e)} /><br />
-                    <label>Password: </label><br /><input type='text' name='password' label='Password' value={this.state.password} onChange={e => this.handleOnChange(e)} /><br />
+                    <label>Password: </label><br /><input type='password' name='password' label='Password' value={this.state.password} onChange={e => this.handleOnChange(e)} /><br />
                     <input type='submit' />
                 </form>
             </div>
