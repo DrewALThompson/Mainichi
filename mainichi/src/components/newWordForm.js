@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 const FormBox = styled.div`
     position: absolute;
@@ -7,7 +8,7 @@ const FormBox = styled.div`
     left: 400px;
 `
 
-export default class NewWordForm extends Component {
+class NewWordForm extends Component {
 
     constructor() {
         super()
@@ -53,3 +54,5 @@ export default class NewWordForm extends Component {
         )
     }
 }
+
+export default connect(null,{addWord})(NewWordForm)

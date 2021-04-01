@@ -15,8 +15,11 @@ export default class SignupForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e)
-        console.log(this.state.username)
+        this.props.fetchNewUser(this.state)
+        this.setState({
+            name: '',
+            pasword: ''
+        })
     }
 
     handleOnChange = (e) => {

@@ -14,7 +14,11 @@ class LoginForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e)
+        this.props.fetchUser(this.state)
+        this.setState({
+            name: '',
+            pasword: ''
+        })
     }
 
     handleOnChange = (e) => {
