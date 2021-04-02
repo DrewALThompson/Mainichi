@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
     def create
         user = User.find_by(name: params[:name])
         if user && user.authenticate(params[:password])
-            render json: user
+            render json: {name: user.name, id: user.id, userwords: user.userwords}
         elsif user && !user.authenticate(params[:password])
             render json: {message: 'Password Incorrect'}
         else
