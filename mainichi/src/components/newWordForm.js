@@ -5,8 +5,8 @@ import {addWord} from '../actions/addWord'
 
 const FormBox = styled.div`
     position: absolute;
-    top: 200px;
-    left: 400px;
+    top: 100px;
+    left: 0px;
 `
 
 class NewWordForm extends Component {

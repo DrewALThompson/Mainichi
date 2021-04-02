@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NewWordForm from '../components/newWordForm.js';
+import UserwordsContainer from './userwordsContainer'
 import LoggerContainer from './loggerContainer'
 import { connect } from 'react-redux';
 
@@ -14,7 +14,7 @@ class UserContainer extends Component {
         return(
             <>
                 {this.props.user !== null ?
-                <NewWordForm /> :
+                <UserwordsContainer /> :
                 <LoggerContainer />}
             </>
         )

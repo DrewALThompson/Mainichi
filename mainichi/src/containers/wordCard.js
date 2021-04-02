@@ -60,7 +60,7 @@ class WordCard extends Component {
 
     render(){
         let i = Math.min(this.state.loadedWords.length - 1, this.props.index);
-        let word = this.state.loadedWords[i] || {jpname: 'monkey', jpsentence: 'monkey', definition: 'monke', engsentence: 'monke'};
+        let word = this.state.loadedWords[i];
         
         return(
             <CardStock>

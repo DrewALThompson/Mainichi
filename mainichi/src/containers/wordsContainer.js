@@ -8,7 +8,6 @@ class WordsContainer extends Component {
     
     componentWillMount(){
         this.props.fetchWords()
-        console.log('ok')
     }
 
     render(){
