@@ -43,8 +43,10 @@ class WordCard extends Component {
         e.preventDefault();
         if (this.props.index === this.state.loadedWords.length - 1){
             this.props.setIndex(0)
+            this.setState({flipped: false})
         } else {
             this.props.setIndex(this.props.index + 1)
+            this.setState({flipped: false})
         }
     }
 
@@ -52,8 +54,10 @@ class WordCard extends Component {
         e.preventDefault();
         if (this.props.index === 0){
             this.props.setIndex(this.props.words.length - 1)
+            this.setState({flipped: false})
         } else {
             this.props.setIndex(this.props.index - 1)
+            this.setState({flipped: false})
         }
     }
 

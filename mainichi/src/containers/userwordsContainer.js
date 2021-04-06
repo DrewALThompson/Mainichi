@@ -39,8 +39,10 @@ class UserwordsContainer extends Component {
         e.preventDefault();
         if (this.props.index === this.state.loadedWords.length - 1){
             this.props.setIndex(0)
+            this.setState({flipped: false})
         } else {
             this.props.setIndex(this.props.index + 1)
+            this.setState({flipped: false})
         }
     }
 
@@ -48,8 +50,10 @@ class UserwordsContainer extends Component {
         e.preventDefault();
         if (this.props.index === 0){
             this.props.setIndex(this.props.words.length - 1)
+            this.setState({flipped: false})
         } else {
             this.props.setIndex(this.props.index - 1)
+            this.setState({flipped: false})
         }
     }
 
@@ -70,7 +74,7 @@ class UserwordsContainer extends Component {
                     {this.state.flipped === false ?
                     <CardFaceUserword flip={this.flipCard} next={this.nextCard} last={this.lastCard} remove={this.removeCard} title={word.jpname} sentence={word.jpsentence} /> : 
                     <CardFaceUserword flip={this.flipCard} next={this.nextCard} last={this.lastCard} remove={this.removeCard} title={word.definition} sentence={word.engsentence} />}
-                    <Counter wordIndex={this.props.userIndex} wordsLength={this.state.loadedWords.length} />
+                    <Counter wordIndex={this.props.index} wordsLength={this.state.loadedWords.length} />
                 </CardStock>
                 <NewWordForm />
             </>
