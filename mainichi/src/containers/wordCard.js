@@ -33,6 +33,8 @@ class WordCard extends Component {
             return {...state, loadedWords: props.words}
         } 
     }
+    
+    
 
     flipCard = (e) => {
         e.preventDefault();
@@ -63,8 +65,7 @@ class WordCard extends Component {
 
 
     render(){
-        let i = Math.min((this.props.index > this.state.loadedWords.length - 1 ? 0 : this.props.index));
-        let word = this.state.loadedWords[i];
+        let word = this.state.loadedWords[this.props.index];
         
         return(
             <CardStock>

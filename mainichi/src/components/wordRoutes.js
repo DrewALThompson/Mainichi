@@ -33,7 +33,9 @@ const HeaderJp = styled(Header)`
     right: 440px;
 `
 
-export default function WordRoutes() {
+
+
+const WordRoutes = () => {
 
     let { path, url} = useRouteMatch();
     
@@ -56,3 +58,5 @@ export default function WordRoutes() {
         </>
     )
 }
+
+export default WordRoutes

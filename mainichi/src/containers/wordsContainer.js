@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import WordRoutes from '../components/wordRoutes';
-import {fetchWords}  from '../actions/fetchWords'
+import {fetchWords}  from '../actions/fetchWords';
+import { setIndex } from '../actions/setIndex';
 
 class WordsContainer extends Component {
+
     
     componentWillMount(){
         this.props.fetchWords()

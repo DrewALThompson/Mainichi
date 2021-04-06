@@ -17,6 +17,7 @@ const NavLink = styled(Link)`
 
 const NavBar = () => {
 
+
     return (
         <Bubble>
                 <button>
@@ -25,7 +26,7 @@ const NavBar = () => {
                     </NavLink>
                 </button>
                 <button>
-                    <NavLink to ='/user'>
+                    <NavLink to ='/user' >
                         My Page
                     </NavLink>
                 </button>

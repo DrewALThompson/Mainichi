@@ -27,9 +27,6 @@ class UserwordsContainer extends Component {
         }
     }
 
-    componentWillMount = () => {
-        this.props.setIndex(0)
-    }
 
     flipCard = (e) => {
         e.preventDefault();
