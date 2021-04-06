@@ -41,7 +41,7 @@ class WordCard extends Component {
 
     nextCard = (e) => {
         e.preventDefault();
-        if (this.props.index === this.state.loadedWords.length - 1){
+        if (this.props.index >= this.state.loadedWords.length - 1){
             this.props.setIndex(0)
             this.setState({flipped: false})
         } else {
@@ -63,7 +63,7 @@ class WordCard extends Component {
 
 
     render(){
-        let i = Math.min(this.state.loadedWords.length - 1, this.props.index);
+        let i = Math.min((this.props.index > this.state.loadedWords.length - 1 ? 0 : this.props.index));
         let word = this.state.loadedWords[i];
         
         return(

@@ -2,18 +2,19 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import CardFaceUserword from '../components/cardFaceUserword';
 import { connect } from 'react-redux';
-import NewWordForm from '../components/newWordForm'
-import Counter from '../components/counter'
+import NewWordForm from '../components/newWordForm';
+import Counter from '../components/counter';
+import { setIndex } from '../actions/setIndex';
 
 const CardStock = styled.div`
-    display: flex;
-    justify-content: center;
-    border: white solid 2px;
-    position: absolute:
-    top: 200px;
-    left: 400px;
-    width: 400px;
-    height 224px;
+display: flex;
+justify-content: center;
+position: absolute;
+top: 200px;
+left: 400px;
+border: white solid 2px;
+width: 400px;
+height 224px;
 
 `
 
@@ -37,7 +38,7 @@ class UserwordsContainer extends Component {
 
     nextCard = (e) => {
         e.preventDefault();
-        if (this.props.index === this.state.loadedWords.length - 1){
+        if (this.props.index >= this.state.loadedWords.length - 1){
             this.props.setIndex(0)
             this.setState({flipped: false})
         } else {

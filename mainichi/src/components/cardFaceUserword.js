@@ -3,6 +3,9 @@ import CardButtons from './cardButtons'
 import styled from 'styled-components';
 
 const ButtonContainer = styled.div`
+    position: absolute;
+    top: 185px;
+    left: 135px;
 `
 
 const TitleContainer = styled.h1`
