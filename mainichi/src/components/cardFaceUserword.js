@@ -21,7 +21,9 @@ export default function CardFace(props) {
             <SentContainer>{props.sentence}</SentContainer>
             <ButtonContainer>
                 <CardButtons onClick={props.remove}>Remove</CardButtons>
+                <CardButtons onClick={props.last}>Last</CardButtons>
                 <CardButtons onClick={props.flip}>Flip</CardButtons>
+                <CardButtons onClick={props.next}>Next</CardButtons>
             </ButtonContainer>
         </div>
     )
