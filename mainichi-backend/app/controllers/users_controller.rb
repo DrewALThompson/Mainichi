@@ -17,5 +17,9 @@ class UsersController < ApplicationController
         end
     end
 
+    def destroy
+        # @user = User.find_by(name: params[:nam])
+    end
+
 
 end
