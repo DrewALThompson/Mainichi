@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { setIndex } from '../actions/setIndex';
+import { Route } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Button = styled(Link)`
     border: #8E8A83 1px solid;
@@ -16,16 +19,24 @@ const Button = styled(Link)`
     text-decoration: none;
 `
 
-
-
-
 const RouterButton = (props) => {
 
+    const onClick = () => {
+        props.setIndex(0)
+        console.log('is clicked')
+    }
+
     return (
-        <Button to={props.route} type='button'>
+        <Button to={props.route} type='button' onClick={onClick}>
             {props.children}
         </Button>
     )
 }
 
-export default RouterButton
+const mapDispatchToProps = dispatch => {
+    return {
+        setIndex: (i) => dispatch(setIndex(i))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(RouterButton)

@@ -47,7 +47,7 @@ class UserwordsContainer extends Component {
     lastCard = (e) => {
         e.preventDefault();
         if (this.props.index === 0){
-            this.props.setIndex(this.props.words.length - 1)
+            this.props.setIndex(this.state.loadedWords.length - 1)
             this.setState({flipped: false})
         } else {
             this.props.setIndex(this.props.index - 1)
