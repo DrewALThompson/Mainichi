@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+    def index
+      
+    end
+
     def create
         if params[:password] === params[:password_confirmation]
           if User.find_by(name: params[:name])
