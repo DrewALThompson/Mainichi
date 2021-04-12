@@ -1,7 +1,3 @@
-User.destroy_all
-Word.destroy_all
-Userword.destroy_all
-
 DATA = {
     :user_keys =>
       ["name", "password"],

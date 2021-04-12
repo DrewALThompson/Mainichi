@@ -3,4 +3,5 @@ class WordsController < ApplicationController
         words = Word.all
         render json: words
     end
+
 end
