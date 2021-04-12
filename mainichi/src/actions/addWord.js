@@ -1,6 +1,6 @@
 export function addWord(json){
     return (dispatch) => { 
-        fetch('http://localhost:3000/users/words/new', {
+        fetch('http://localhost:3000/userwords', {
             headers:{
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
@@ -9,9 +9,9 @@ export function addWord(json){
             body: JSON.stringify(json)
         })
         .then(res => res.json())
-        .then(user => dispatch({
+        .then(obj => dispatch({
             type: 'ADD_WORD',
-            payload: user
+            payload: obj.user
         }))
     }
 }

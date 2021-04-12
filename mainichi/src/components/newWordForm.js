@@ -11,19 +11,26 @@ const FormBox = styled.div`
 
 class NewWordForm extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
           jpname: '',
           definition: '',
           jpsentence: '',
-          engsentence: ''
+          engsentence: '',
+          user: this.props.user.id
         }
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e)
+        this.props.addWord(this.state)
+        this.setState({
+            jpname: '',
+            definition: '',
+            jpsentence: '',
+            engsentence: ''
+        })
     }
 
     handleOnChange = (e) => {
@@ -56,4 +63,16 @@ class NewWordForm extends Component {
     }
 }
 
-export default connect(null,{addWord})(NewWordForm)
+const mapStateToProps = state => {
+    return {
+        user: state.user
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        addWord: (i) => dispatch(addWord(i))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewWordForm)
