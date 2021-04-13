@@ -9,9 +9,9 @@ export function addWord(json){
             body: JSON.stringify(json)
         })
         .then(res => res.json())
-        .then(obj => dispatch({
+        .then(json => dispatch({
             type: 'ADD_WORD',
-            payload: obj.user
+            payload: json
         }))
     }
 }

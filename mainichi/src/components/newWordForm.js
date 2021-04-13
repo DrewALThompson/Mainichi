@@ -26,10 +26,10 @@ class NewWordForm extends Component {
         e.preventDefault();
         this.props.addWord(this.state)
         this.setState({
-            jpname: '',
-            definition: '',
-            jpsentence: '',
-            engsentence: ''
+        jpname: '',
+        definition: '',
+        jpsentence: '',
+        engsentence: ''
         })
     }
 
@@ -56,7 +56,7 @@ class NewWordForm extends Component {
                     <label>Translation<br />
                         <input type='text' name='engsentence' value={this.state.engsentence} onChange={e => this.handleOnChange(e)} />
                     </label><br />
-                    <input type='submit' />
+                    <input type='submit' onClick={this.props.onClick} />
                 </form>
             </FormBox>
         )

@@ -10,7 +10,6 @@ class UserContainer extends Component {
     }
     render(){
 
-        console.log(this.props.user)
         return(
             <>
                 {this.props.user !== null ?

@@ -15,18 +15,15 @@ left: 400px;
 border: white solid 2px;
 width: 400px;
 height 224px;
-
 `
 
 class UserwordsContainer extends Component {
     constructor(props){
         super(props)
         this.state = {
-            flipped: false,
-            loadedWords: this.props.userwords
+            flipped: false
         }
     }
-
 
 
     flipCard = (e) => {
@@ -36,7 +33,7 @@ class UserwordsContainer extends Component {
 
     nextCard = (e) => {
         e.preventDefault();
-        if (this.props.index >= this.state.loadedWords.length - 1){
+        if (this.props.index >= this.props.userwords.length - 1){
             this.props.setIndex(0)
             this.setState({flipped: false})
         } else {
@@ -48,7 +45,7 @@ class UserwordsContainer extends Component {
     lastCard = (e) => {
         e.preventDefault();
         if (this.props.index === 0){
-            this.props.setIndex(this.state.loadedWords.length - 1)
+            this.props.setIndex(this.props.userwords.length - 1)
             this.setState({flipped: false})
         } else {
             this.props.setIndex(this.props.index - 1)
@@ -58,14 +55,13 @@ class UserwordsContainer extends Component {
 
     removeCard = (e) => {
         e.preventDefault();
-        console.log('ook')
     }
 
 
     render(){
 
-        let i = Math.min(this.state.loadedWords.length - 1, this.props.index);
-        let word = this.state.loadedWords[i];
+        let i = Math.min(this.props.userwords.length - 1, this.props.index);
+        let word = this.props.userwords[i];
         
         return(
             <>
@@ -73,9 +69,9 @@ class UserwordsContainer extends Component {
                     {this.state.flipped === false ?
                     <CardFaceUserword flip={this.flipCard} next={this.nextCard} last={this.lastCard} remove={this.removeCard} title={word.jpname} sentence={word.jpsentence} /> : 
                     <CardFaceUserword flip={this.flipCard} next={this.nextCard} last={this.lastCard} remove={this.removeCard} title={word.definition} sentence={word.engsentence} />}
-                    <Counter wordIndex={this.props.index} wordsLength={this.state.loadedWords.length} />
+                    <Counter wordIndex={this.props.index} wordsLength={this.props.userwords.length} />
                 </CardStock>
-                <NewWordForm />
+                <NewWordForm/>
             </>
         )
     }
@@ -84,7 +80,8 @@ class UserwordsContainer extends Component {
 const mapStateToProps = state => {
     return {
         index: state.index,
-        userwords: state.user.userwords
+        userwords: state.user.userwords,
+        message: state.message
     };
 };
 

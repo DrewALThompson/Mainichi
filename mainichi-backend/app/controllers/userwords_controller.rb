@@ -1,14 +1,19 @@
 class UserwordsController < ApplicationController
     def create
         word = Userword.new(user_id: params[:user], jpname: params[:jpname], definition: params[:definition], jpsentence: params[:jpsentence], engsentence: params[:engsentence])
-        puts word.user
+        user = User.find(params[:user])
         if word.save
-            user = User.find_by(id: params[:user])
-            user_data = {name: user.name, id: user.id, userwords: user.userwords}
-            render json: {message: 'Word saved', user: user_data}
+            render json: {message: 'Word saved', userwords: user.userwords }
         else
-            user = User.find_by(id: params[:user])
-            render json: {message: 'Word failed to create', user: user_data}
+            render json: {message: 'Word failed to create'}
         end
+    end
+
+    def destroy
+        word = Userword.find(params[:wordId])
+        user = User.find(params[:user])
+        word.destroy
+        render json: {userwords: user.userwords}
+
     end
 end
